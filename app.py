@@ -20,6 +20,7 @@ def gerar_contrato():
     nome_locatario = request.form['nome_locatario']
     cpf_locatario = request.form['cpf_locatario']
     telefone_locatario = request.form['telefone_locatario']
+    endereco_imovel = request.form['endereco_imovel']
     valor_aluguel = float(request.form['valor_aluguel'])
     valor_calcao = valor_aluguel * 2
 
@@ -42,11 +43,11 @@ def gerar_contrato():
     
     p_locatario = doc.add_paragraph()
     p_locatario.add_run("LOCATÁRIO: ").bold = True
-    p_locatario.add_run(f"{nome_locatario}, brasileiro(a), portador(a) do CPF {cpf_locatario}, Fone {telefone_locatario}")
+    p_locatario.add_run(f"{nome_locatario}, brasileiro(a), portador(a) do CPF {cpf_locatario}, FONE{telefone_locatario}")
 
     p_imovel = doc.add_paragraph()
     p_imovel.add_run("IMÓVEL: ").bold = True
-    p_imovel.add_run("AV. Brino 371, apto 102, Santa Maria Goretti, Porto Alegre, RS.\n\n")
+    p_imovel.add_run(f"{endereco_imovel}\n\n")
 
     doc.add_paragraph("As partes acima qualificadas, pelo presente instrumento, contratam a locação do imóvel supracitado, mediante as clausulas e condições seguintes:\n\n")
 
