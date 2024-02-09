@@ -21,6 +21,9 @@ def gerar_contrato():
     cpf_locatario = request.form['cpf_locatario']
     telefone_locatario = request.form['telefone_locatario']
     endereco_imovel = request.form['endereco_imovel']
+    complemento_imovel = request.form['complemento_imovel']
+    bairro_imovel = request.form['bairro_imovel'] 
+    cep_imovel = request.form['cep_imovel'] 
     valor_aluguel = float(request.form['valor_aluguel'])
     valor_calcao = valor_aluguel * 2
 
@@ -39,7 +42,7 @@ def gerar_contrato():
     
     p_locador = doc.add_paragraph()
     p_locador.add_run("LOCADOR:").bold = True
-    p_locador.add_run(" PP. Tereza Maria Cardoso da Silva, brasileira, inscrita no CPF 31589413091 e RG 1008298679 residente e domiciliado nesta capital, AV. Bernardi n° 437 apto 202, Bairro Cristo Redentor, CEP 91040-030, FONE 999414337\n")
+    p_locador.add_run(" PP. Tereza Maria Cardoso da Silva, brasileira, inscrita no CPF 31589413091 e RG 1008298679 residente e domiciliado nesta capital, AV. Bernardi n° 437 apto 202, Bairro Cristo Redentor, CEP 91040-030, FONE 999414337.\n")
     
     p_locatario = doc.add_paragraph()
     p_locatario.add_run("LOCATÁRIO: ").bold = True
@@ -47,7 +50,7 @@ def gerar_contrato():
 
     p_imovel = doc.add_paragraph()
     p_imovel.add_run("IMÓVEL: ").bold = True
-    p_imovel.add_run(f"{endereco_imovel}\n\n")
+    p_imovel.add_run(f"{endereco_imovel}, apto {complemento_imovel}, Bairro {bairro_imovel}, CEP {cep_imovel}.\n\n")
 
     doc.add_paragraph("As partes acima qualificadas, pelo presente instrumento, contratam a locação do imóvel supracitado, mediante as clausulas e condições seguintes:\n\n")
 
