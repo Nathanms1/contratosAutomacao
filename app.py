@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, send_file
 from docx import Document
 from num2words import num2words
 from datetime import datetime, timedelta
+import os
 
 
 app = Flask(__name__)
@@ -88,10 +89,12 @@ def gerar_contrato():
 
     # Salvar o documento com o nome do locatário (sem espaços)
     nome_arquivo = nome_locatario.replace(" ", "_")
-    doc.save(f"contrato_de_locacao_{nome_arquivo}.docx")
+    caminho_arquivo = os.path.join(app.root_path, f"{nome_arquivo}.docx")
+    doc.save(caminho_arquivo)
 
     # Enviar o arquivo como uma resposta para o navegador
-    return send_file(nome_arquivo, as_attachment=True)
+    return send_file(caminho_arquivo, as_attachment=True)
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
