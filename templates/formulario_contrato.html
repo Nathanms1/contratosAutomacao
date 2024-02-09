@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contrato de Locação</title>
+</head>
+<body>
+    <h1>Formulário de Contrato de Locação</h1>
+    <form action="/gerar_contrato" method="post">
+        <label for="nome_locatario">Nome do Locatário:</label><br>
+        <input type="text" id="nome_locatario" name="nome_locatario"><br><br>
+
+        <label for="cpf_locatario">CPF do Locatário:</label><br>
+        <input type="text" id="cpf_locatario" name="cpf_locatario"><br><br>
+
+        <label for="telefone_locatario">Telefone do Locatário:</label><br>
+        <input type="text" id="telefone_locatario" name="telefone_locatario"><br><br>
+
+        <label for="valor_aluguel">Valor do Aluguel:</label><br>
+        <input type="text" id="valor_aluguel" name="valor_aluguel"><br><br>
+
+        <input type="submit" value="Gerar Contrato">
+    </form>
+</body>
+</html>
