@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_file
 from docx import Document
 from num2words import num2words
 from datetime import datetime, timedelta
@@ -90,6 +90,9 @@ def gerar_contrato():
     doc.save(f"contrato_de_locacao_{nome_arquivo}.docx")
 
     return f"Contrato gerado com sucesso para {nome_locatario}. Verifique o arquivo 'contrato_de_locacao_{nome_arquivo}.docx'."
+
+# Enviar o arquivo como uma resposta para o navegador
+    return send_file(nome_arquivo, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
