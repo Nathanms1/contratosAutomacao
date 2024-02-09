@@ -1,23 +1,11 @@
-from app import app
-from gunicorn.app.base import BaseApplication
+from os.path import abspath, dirname
+import sys
 
-class FlaskApp(BaseApplication):
-    def __init__(self, app, options=None):
-        self.options = options or {}
-        self.application = app
-        super().__init__()
+# Adicione o diretório raiz do projeto ao path do Python
+sys.path.insert(0, abspath(dirname(__file__)))
 
-    def load_config(self):
-        for key, value in self.options.items():
-            if key in self.cfg.settings and value is not None:
-                self.cfg.set(key.lower(), value)
+# Importe o aplicativo Flask da maneira correta
+from app import app as application
 
-    def load(self):
-        return self.application
-
-if __name__ == '__main__':
-    options = {
-        'bind': '0.0.0.0:8080',
-        'workers': 4,
-    }
-    FlaskApp(app, options).run()
+if __name__ == "__main__":
+    application.run()
