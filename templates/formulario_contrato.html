@@ -16,11 +16,15 @@
             </div>
             <div class="form-group">
                 <label for="cpf_locatario">CPF do Locatário:</label>
-                <input type="text" class="form-control" id="cpf_locatario" name="cpf_locatario" required>
+                <input type="number" class="form-control" id="cpf_locatario" name="cpf_locatario" required>
             </div>
             <div class="form-group">
                 <label for="telefone_locatario">Telefone do Locatário:</label>
-                <input type="text" class="form-control" id="telefone_locatario" name="telefone_locatario" required>
+                <input type="number" class="form-control" id="telefone_locatario" name="telefone_locatario" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco_imovel">Endereço do Imóvel:</label>
+                <input type="text" class="form-control" id="endereco_imovel" name="endereco_imovel" required>
             </div>
             <div class="form-group">
                 <label for="valor_aluguel">Valor do Aluguel:</label>
@@ -28,7 +32,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">R$</span>
                     </div>
-                    <input type="text" class="form-control" id="valor_aluguel" name="valor_aluguel" required>
+                    <input type="number" class="form-control" id="valor_aluguel" name="valor_aluguel" required>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Gerar Contrato</button>
