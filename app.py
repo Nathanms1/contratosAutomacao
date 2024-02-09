@@ -43,7 +43,7 @@ def gerar_contrato():
     
     p_locatario = doc.add_paragraph()
     p_locatario.add_run("LOCATÁRIO: ").bold = True
-    p_locatario.add_run(f"{nome_locatario}, brasileiro(a), portador(a) do CPF {cpf_locatario}, FONE{telefone_locatario}")
+    p_locatario.add_run(f"{nome_locatario}, brasileiro(a), portador(a) do CPF {cpf_locatario}, FONE {telefone_locatario}")
 
     p_imovel = doc.add_paragraph()
     p_imovel.add_run("IMÓVEL: ").bold = True
