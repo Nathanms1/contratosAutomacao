@@ -3,6 +3,7 @@ from docx import Document
 from num2words import num2words
 from datetime import datetime, timedelta
 
+
 app = Flask(__name__)
 
 def valor_por_extenso(valor):
@@ -89,9 +90,7 @@ def gerar_contrato():
     nome_arquivo = nome_locatario.replace(" ", "_")
     doc.save(f"contrato_de_locacao_{nome_arquivo}.docx")
 
-    return f"Contrato gerado com sucesso para {nome_locatario}. Verifique o arquivo 'contrato_de_locacao_{nome_arquivo}.docx'."
-
-# Enviar o arquivo como uma resposta para o navegador
+    # Enviar o arquivo como uma resposta para o navegador
     return send_file(nome_arquivo, as_attachment=True)
 
 if __name__ == '__main__':
