@@ -21,7 +21,7 @@ Este projeto visa facilitar a vida de proprietários de imóveis que trabalham c
 
 ## Instalação
 1. Clone o repositório:
-  git clone https://github.com/seu_usuario/contrato-locacao.git
+  git clone https://github.com/Nathanms1/contratosAutomacao.git
 2. Instale as dependências:
   cd contrato-locacao
   pip install -r requirements.txt
